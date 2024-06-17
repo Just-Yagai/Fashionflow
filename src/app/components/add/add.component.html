@@ -1,0 +1,38 @@
+<div class="container mt-4 p-2">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Listado de Productos</span>
+            <button class="btn btn-dark btn-lg float-end">Agregar</button>
+            @if (productos.length === 0) {
+            <h5 style="margin-top: 30px;">No hay datos para mostrar</h5>
+            }
+            <!-- <button class="btn btn-dark btn-lg float-right" routerLink="/create-empleado">Agregar</button> -->
+            @if (productos.length > 0) {
+            <table class="table table-striped mt-5">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    @for (item of productos; track $index) {
+                    <tr>
+                        <td>{{ item.nombre }}</td>
+                        <td>{{ item.descripcion }}</td>
+                        <td>{{ item.precio }}</td>
+                        <td>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="bi bi-pencil-square"></i>
+                            <i class="bi bi-trash3-fill"></i>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            }
+        </div>
+    </div>
+</div>
